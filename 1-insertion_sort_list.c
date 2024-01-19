@@ -14,6 +14,7 @@ void insertion_sort_list(listint_t **list)
 	while (item)
 	{
 		item2 = item;
+		item = item->next;
 		while (item2->prev)
 		{
 			if (item2->n < item2->prev->n)
@@ -25,10 +26,7 @@ void insertion_sort_list(listint_t **list)
 			}
 			else
 				break;
-
-
 		}
-		item = item->next;
 	}
 }
 /**
