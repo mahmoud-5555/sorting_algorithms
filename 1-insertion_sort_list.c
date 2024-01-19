@@ -15,15 +15,16 @@ void insertion_sort_list(listint_t **list)
 			if (item2->n < item2->prev->n)
 			{
 				swap(item2, item2->prev);
-				printf("swaping 1: item = %d, item->prev = %d \n", item2->n, item2->prev->n);
+				if (!item2->prev)
+					*list = item2;
+				print_list(*list);
 			}
 			else
 				break;
 
-			item2 = item2->prev;
+
 		}
 		item = item->next;
-		print_list(*list);
 	}
 }
 /**
@@ -51,6 +52,5 @@ void swap(listint_t *element, listint_t *element2)
 	element->next = element2;
 	element->prev = temp_prev;
 	element2->next = temp_next;
-	printf("swaping 1: item = %d, item->prev = %d \n", element->n, element2->n);
 
 }
