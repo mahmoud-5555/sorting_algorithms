@@ -41,6 +41,8 @@ void swap(listint_t *element, listint_t *element2)
 	/*declaer temps*/
 	listint_t *temp_next, *temp_prev;
 
+	if (!element || !element2)
+		return;
 
 	if (element->next)
 		element->next->prev = element2;
