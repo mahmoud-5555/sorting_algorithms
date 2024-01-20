@@ -9,7 +9,7 @@ void insertion_sort_list(listint_t **list)
 	/*loop over the linked_list*/
 	listint_t *item, *item2;
 
-	if ((list || *list) && (*list)->next)
+	if ((list && *list))
 	{
 		item = *list;
 		while (item)
