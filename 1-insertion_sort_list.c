@@ -10,22 +10,23 @@ void insertion_sort_list(listint_t **list)
 	listint_t *item = *list, *item2;
 
 	if (!list || !*list)
-		return;
-	while (item)
 	{
-		item2 = item;
-		item = item->next;
-		while (item2->prev)
+		while (item)
 		{
-			if (item2->n < item2->prev->n)
+			item2 = item;
+			item = item->next;
+			while (item2->prev)
 			{
-				swap(item2, item2->prev);
-				if (!item2->prev)
-					*list = item2;
-				print_list(*list);
+				if (item2->n < item2->prev->n)
+				{
+					swap(item2, item2->prev);
+					if (!item2->prev)
+						*list = item2;
+					print_list(*list);
+				}
+				else
+					break;
 			}
-			else
-				break;
 		}
 	}
 }
