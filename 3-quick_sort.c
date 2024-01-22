@@ -12,7 +12,7 @@ void quick_sort(int *array, size_t size)
 	if (!array || size < 1)
 		return;
 
-	q_sort(array, 0, size - 1, size);
+	partition(array, 0, size - 1, size);
 }
 
 /**
@@ -38,14 +38,7 @@ void swap_integers(int *element1, int *element2)
  * @size: the size of the array
  * Return: no return value
  */
-void q_sort(int *array, size_t low, size_t high, size_t size)
-{
-	if (low < high && !(high > size - 1))
-	{
-		partition(array, low, high, size);
 
-	}
-}
 
 /**
  * partition - function to partition the array
@@ -60,6 +53,9 @@ void partition(int *array, size_t low, size_t high, size_t size)
 	int pivot = array[high];
 	size_t first_pointer = low;
 	size_t secand_pointer = low;
+
+	if (low >= high || (high > size - 1))
+		return;
 
 	for (; secand_pointer < high; secand_pointer++)
 	{
@@ -80,7 +76,7 @@ void partition(int *array, size_t low, size_t high, size_t size)
 		swap_integers(&array[first_pointer], &array[high]);
 		print_array(array, size);
 	}
-	q_sort(array, low, first_pointer - 1, size);
-	q_sort(array, first_pointer + 1, high, size);
+	partition(array, low, first_pointer - 1, size);
+	partition(array, first_pointer + 1, high, size);
 
 }
