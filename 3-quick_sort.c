@@ -30,15 +30,6 @@ void swap_integers(int *element1, int *element2)
 	*element2 = temp;
 }
 
-/**
- * q_sort - the recursive function for QuickSort
- * @array: array of integers
- * @low: the lower index of the subarray
- * @high: the higher index of the subarray
- * @size: the size of the array
- * Return: no return value
- */
-
 
 /**
  * partition - function to partition the array
@@ -50,12 +41,15 @@ void swap_integers(int *element1, int *element2)
  */
 void partition(int *array, size_t low, size_t high, size_t size)
 {
-	int pivot = array[high];
-	size_t first_pointer = low;
-	size_t secand_pointer = low;
+	int pivot;
+	size_t first_pointer, secand_pointer;
 
 	if (low >= high || (high > size - 1))
 		return;
+
+	pivot = array[high];
+	first_pointer = low;
+	secand_pointer = low;
 
 	for (; secand_pointer < high; secand_pointer++)
 	{
