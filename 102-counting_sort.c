@@ -52,7 +52,7 @@ void counting(int *array, size_t size, int k)
 		x = array[i];
 		count_arr[x]++;
 	}
-	for (x = 1; x < k; x++)
+	for (x = 1; x <= k; x++)
 	{
 		count_arr[x] = count_arr[x] + count_arr[x - 1];
 	}
@@ -60,7 +60,7 @@ void counting(int *array, size_t size, int k)
 	print_array(count_arr, k);
 	for (x = size - 1; x >= 0; x--)
 	{
-		sort_arr[count_arr[array[x]]--] = array[x];
+		sort_arr[--count_arr[array[x]]] = array[x];
 	}
 
 	for (i = 0; i < size; i++)
