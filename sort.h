@@ -27,4 +27,6 @@ void swap_intgers(int *element, int *element2);
 void partition(int *array, size_t low, size_t high, size_t size);
 void selection_sort(int *array, size_t size);
 void shell_sort(int *array, size_t size);
+void counting_sort(int *array, size_t size);
+void counting(int *array, size_t size, int k);
 #endif
