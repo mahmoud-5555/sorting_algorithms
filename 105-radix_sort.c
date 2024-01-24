@@ -51,7 +51,7 @@ void radix(int *array, size_t size, int per, int k)
 	for (i = 0; i < size; i++)
 	{
 		x = (array[i] / per) % 10;
-		count_arr[x]++;
+		++count_arr[x];
 	}
 	for (x = 1; x < k; x++)
 	{
