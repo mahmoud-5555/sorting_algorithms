@@ -30,6 +30,14 @@ void swap_integers(int *element1, int *element2)
 	*element2 = temp;
 }
 
+/**
+ * partition_h - function to partition the array
+ * @array: array of integers
+ * @low: the lower index of the subarray
+ * @high: the higher index of the subarray
+ * @size: the size of the array
+ * Return: the partition index
+ */
 void partition_h(int *array, size_t low, size_t high, size_t size)
 {
 	int pivot;
@@ -38,15 +46,33 @@ void partition_h(int *array, size_t low, size_t high, size_t size)
 	if (low >= high || (high > size - 1))
 		return;
 
-	pivot_index = ((high - low) / 2) + low;
+	pivot_index = high;
 	pivot = array[pivot_index];
 	first_pointer = low;
 	secand_pointer = high;
-
-	while (low > high)
+	while (first_pointer < secand_pointer)
 	{
-		if 
+		if (array[first_pointer] >= pivot)
+		{
+			if (array[secand_pointer] < pivot)
+			{
+				swap_integers(&array[secand_pointer], &array[first_pointer]);
+				/* new pivot index if the pivot change the place*/
+				if (first_pointer == pivot_index)
+					pivot_index = secand_pointer;
+
+				else if (secand_pointer == pivot_index)
+					pivot_index = first_pointer;
+
+				print_array(array, size);
+			}
+			else
+				secand_pointer--;
+		}
+		else
+			first_pointer++;
+
 	}
-
-
+	partition_h(array, low, pivot_index - 1, size);
+	partition_h(array, pivot_index + 1, high, size);
 }
