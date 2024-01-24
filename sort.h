@@ -31,4 +31,5 @@ void counting_sort(int *array, size_t size);
 void counting(int *array, size_t size, int k);
 void quick_sort_hoare(int *array, size_t size);
 void partition_h(int *array, size_t low, size_t high, size_t size);
+void cocktail_sort_list(listint_t **list);
 #endif

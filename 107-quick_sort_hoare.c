@@ -46,9 +46,9 @@ void partition_h(int *array, size_t low, size_t high, size_t size)
 	if (low >= high || (high > size - 1))
 		return;
 
-	pivot_index = high;
+	pivot_index = low;
 	pivot = array[pivot_index];
-	first_pointer = low;
+	first_pointer = low + 1;
 	secand_pointer = high;
 	while (first_pointer < secand_pointer)
 	{
