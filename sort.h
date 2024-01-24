@@ -29,4 +29,6 @@ void selection_sort(int *array, size_t size);
 void shell_sort(int *array, size_t size);
 void counting_sort(int *array, size_t size);
 void counting(int *array, size_t size, int k);
+void radix_sort(int *array, size_t size);
+void radix(int *array, size_t size, int per, int k);
 #endif
