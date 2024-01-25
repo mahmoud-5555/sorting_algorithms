@@ -14,10 +14,6 @@ void counting_sort(int *array, size_t size)
 
 	if (!array || size < 2)
 		return;
-<<<<<<< HEAD
-=======
-
->>>>>>> refs/remotes/origin/main
 	k = array[i];
 	for (; i < size; i++)
 	{
