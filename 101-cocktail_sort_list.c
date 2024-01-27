@@ -38,7 +38,7 @@ void swap(listint_t *element, listint_t *element2)
 void cocktail_sort_list(listint_t **list)
 {
 	listint_t *item;
-	int changes = 1;
+	int changes = 1, first = 1;
 
 	if (!list || !*list)
 		return;

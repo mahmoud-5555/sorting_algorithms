@@ -34,4 +34,6 @@ void radix(int *array, size_t size, int per, int k);
 void quick_sort_hoare(int *array, size_t size);
 void partition_h(int *array, size_t low, size_t high, size_t size);
 void cocktail_sort_list(listint_t **list);
+void quick_sort_hoare(int *array, size_t size);
+size_t hoare_partition(int *array, size_t low, size_t high, size_t size);
 #endif
